@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../component/Header/Navbar";
-
+import Footer from "../component/common/Footer";
 const AboutUs = () => {
   return (
     <div>
@@ -26,6 +26,7 @@ const AboutUs = () => {
         strive to exceed expectations, driving growth and prosperity for our
         clients and stakeholders.
       </p>
+      <Footer />
     </div>
   );
 };
