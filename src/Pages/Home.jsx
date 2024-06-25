@@ -6,6 +6,7 @@ import ProductSection from "../component/Home/ProductSection";
 import SupplyChain from "../component/Home/SupplyChain";
 import WhyChoose from "../component/Home/WhyChoose";
 import Navbar from "../component/Header/Navbar";
+import Footer from "../component/common/Footer";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <ProductSection />
       <SupplyChain />
       <WhyChoose />
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../component/Header/Navbar";
 
-function Aboutus() {
+const AboutUs = () => {
   return (
     <div>
       <Navbar />{" "}
@@ -28,6 +28,6 @@ function Aboutus() {
       </p>
     </div>
   );
-}
+};
 
-export default Aboutus;
+export default AboutUs;

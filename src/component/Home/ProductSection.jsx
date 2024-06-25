@@ -10,8 +10,8 @@ const ProductSection = () => {
   const products = [
     { imageUrl: one, title: "Rice", category: "Grains" },
     { imageUrl: two, title: "Maize (Corn)", category: "Grains  " },
+    { imageUrl: four, title: "Pearl Millet (Bajra)", category: "Grains" },
     { imageUrl: three, title: "Mung Bean", category: "Legumes" },
-    { imageUrl: four, title: "Pearl Millet (Bajra)", category: "Beans & Peas" },
   ];
 
   return (
