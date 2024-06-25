@@ -5,14 +5,17 @@ import App from './App';
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import reportWebVitals from './reportWebVitals';
-
+import store from "./redux/store"
+import { Provider } from 'react-redux';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Provider store={store}>
         <App />
-        <Toaster />
-      </BrowserRouter>
+      </Provider>
+      <Toaster />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
