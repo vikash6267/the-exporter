@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+
+
+
+.flip-text {
+  display: inline-block;
+  animation: flip-animation 5s infinite;
+}
+
+@keyframes flip-animation {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+}

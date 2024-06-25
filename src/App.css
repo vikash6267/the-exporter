@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html,body {
+  overflow-x: hidden;
+   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {  
+  scrollbar-width: 5px;
+  scrollbar-color: #2b06ff;
+  /* color: rgb(90, 37, 37) !important; */
+  
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 17px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #131313;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #f3e9e9;
+  border-radius: 10px;
+  /* visibility: hidden; */
+}
+
+*:active::-webkit-scrollbar-thumb,
+*:focus::-webkit-scrollbar-thumb,
+*:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flip-text {
+  display: inline-block;
+  animation: flip-animation 5s infinite;
+}
+
+@keyframes flip-animation {
+  0%, 100% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(360deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* styles.css */
+
+.supply-chain-section {
+  position: relative;
+  background-image: url('https://saivleen.com/wp-content/uploads/2024/05/gourmet-chocolate-dessert-wooden-table-decorated-with-spices-generated-by-ai.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Ensure full height of viewport */
 }
 
-.App-link {
-  color: #61dafb;
+.supply-chain-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+@media only screen and (max-width:639px) {
+  .mobile{
+   display: none;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ }
