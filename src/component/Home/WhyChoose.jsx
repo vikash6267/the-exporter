@@ -52,7 +52,7 @@ const WhyChoose = () => {
               {section.icon}
               <div>
                 <h2 className="text-xl  mb-2 text-[#33536B] font-fjalla ">{section.title}</h2>
-                <p className="text-[#5A5A5A] text-sm">{section.description}</p>
+                <p className="text-[#5A5A5A] text-[12px] lg:text-base">{section.description}</p>
               </div>
             </div>
           </div>

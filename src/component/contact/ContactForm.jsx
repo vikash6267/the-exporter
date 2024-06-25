@@ -32,7 +32,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className=" mx-auto p-8 bg-white shadow-lg rounded">
+    <div className=" mx-auto lg:p-8 p-2 bg-white shadow-lg rounded">
       {/* <h2 className="text-xl font-semibold mb-4">Contact Us</h2> */}
       <form onSubmit={handleSubmit}>
     <div className=' flex justify-between'>

@@ -105,6 +105,28 @@ code {
 
 
 
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #000000; /* Your primary color */
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #df794d; /* Your primary color */
+  box-shadow: 0 0 0 0.2rem rgba(223, 121, 77, 0.25); /* Adjust shadow color as needed */
+}
+
 
 @media only screen and (max-width:639px) {
   .mobile{

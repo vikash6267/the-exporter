@@ -38,10 +38,10 @@ function AboutSection() {
       
 
       {/* Data Section */}
-      <div className="lg:w-1/2 md:w-1/2 w-11/12 mx-auto bg-white shadow-lg rounded-lg p-6">
+      <div className="lg:w-1/2 md:w-1/2 w-full bg-white shadow-lg rounded-lg p-6">
         <p className="text-[#e2571a] font-fjalla italic text-lg">About The Bharat Exporter</p>
-        <h2 className="text-[#33536B] text-4xl font-sans font-bold mt-2">GRAIN AND SPICES SUPPLIER IN SURAT</h2>
-        <p className="text-[#5A5A5A] mt-2 leading-relaxed">
+        <h2 className="text-[#33536B] lg:text-4xl md:text-4xl text-2xl font-sans font-bold mt-2">GRAIN AND SPICES SUPPLIER IN SURAT</h2>
+        <p className="text-[#5A5A5A] mt-2 leading-relaxed text-[12px] lg:text-[14px]">
           Saivleen International is an active import-export enterprise dedicated
           to enabling seamless global trade. With a firm commitment to goodness,
           we specialize in connecting businesses worldwide, bridging gaps in the
