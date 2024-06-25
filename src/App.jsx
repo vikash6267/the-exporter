@@ -6,6 +6,7 @@ import ContactUs from './Pages/ContactUs';
 import Aboutus from './Pages/Aboutus';
 import AllProduct from './Pages/AllProduct';
 import Navbar from './component/Header/Navbar';
+import Footer from './component/common/Footer';
 function App() {
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
 
 
     </Routes>
-   
+   <Footer></Footer>
     </div>
   );
 }
