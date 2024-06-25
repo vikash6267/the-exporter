@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation, matchPath, Link } from 'react-router-dom';
-import logo from "../../assests/logo.png"
+import logo from "../../assests/logo2.png"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -21,8 +21,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="  w-screen   font-bold text-lg border-gray-300 border-b">
-      <div className="w-11/12 mx-auto flex justify-between items-center h-[80px]   mb-2   ">
+    <nav className="  w-screen   font-bold text-lg border-gray-300  ">
+     <div className=' w-screen  bg-gradient-to-r from-gray-900 to-white  '>
+     <div className="w-11/12 mx-auto flex justify-between items-center h-[80px]   mb-2  ">
         {/* Logo Section */}
         <div className="text-white text-lg font-bold">
           <Link to="/" className="flex items-center">
@@ -59,6 +60,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+     </div>
 
   
     {/* Mobile Menu */}

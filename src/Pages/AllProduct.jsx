@@ -24,7 +24,7 @@ const beans = [
     image: bean4,
   },
   {
-    name: "Kabuli chickpeas supplier in Surat",
+    name: "Kabuli chickpeas ",
     category: "Beans & Peas",
     image: bean3,
   },
@@ -34,7 +34,7 @@ const beans = [
     image: bean1,
   },
   {
-    name: "Soya bean supplier in Surat",
+    name: "Soya bean ",
     category: "Beans & Peas",
     image: bean2,
   },
