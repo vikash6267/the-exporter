@@ -11,6 +11,8 @@ import AddProduct from "./component/Admin/pages/AddProduct";
 import GetProduct from "./component/Admin/pages/GetProduct";
 import Login from "./component/Admin/pages/Login";
 import Dashboard from "./component/Admin/pages/Dashboard";
+import Blog from "./Pages/Blog";
+import SingleBlog from "./Pages/SingleBlog";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/about" element={<Aboutus />} />
         <Route path="/product" element={<AllProduct />} />
+        <Route path="/blogs" element={<Blog />} />
+        <Route path="/blogs/:blog" element={<SingleBlog />} />
 
         <Route
           path="/login"

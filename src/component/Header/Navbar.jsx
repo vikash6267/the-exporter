@@ -17,12 +17,13 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Products', path: '/product' },
     { name: 'About', path: '/about' },
-    { name: 'Contact Us', path: '/contact' }
+    { name: 'Contact Us', path: '/contact' },
+    { name: 'Blog', path: '/blogs' },
   ];
 
   return (
     <nav className="  w-screen   font-bold text-lg border-gray-300  ">
-     <div className=' w-screen  bg-gradient-to-r from-gray-900 to-white  '>
+     <div className=' w-screen  bg-[#0F1111]   '>
      <div className="w-11/12 mx-auto flex justify-between items-center h-[80px]   mb-2  ">
         {/* Logo Section */}
         <div className="text-white text-lg font-bold">
@@ -37,9 +38,12 @@ const Navbar = () => {
             <NavLink
               key={link.name}
               to={link.path}
-              className={`relative text-gray-500 hover:text-gray-700 px-3 py-2 group ${
+              className={`relative text-white hover:text-gray-200 px-3 py-2 group ${
                 isActive(link.path) ? 'active' : ''
               }`}
+              // className={`relative text-gray-500 hover:text-gray-700 px-3 py-2 group ${
+              //   isActive(link.path) ? 'active' : ''
+              // }`}
             >
               {link.name}
               <span
@@ -49,6 +53,8 @@ const Navbar = () => {
               ></span>
             </NavLink>
           ))}
+
+
         </div>
 
         {/* Mobile Menu Button */}
