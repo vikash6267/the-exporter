@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const ContactForm = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -17,89 +21,141 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can handle form submission logic here, e.g., send data to backend
-    console.log(formData);
-    // Clear form after submission (if needed)
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+
+    try {
+      Swal.fire({
+        title: "Loading",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        showConfirmButton: false,
+        html: '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>',
+      });
+
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("phone", formData.phone);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("subject", formData.subject);
+      formDataToSend.append("message", formData.message);
+
+      const response = await axios.post(
+        `${BASE_URL}/contact/create`,
+        formDataToSend,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      Swal.close();
+
+      if (response?.data?.success) {
+        Swal.fire({
+          title: `Contact form submited successfully! `,
+          text: `Have a nice day!`,
+          icon: "success",
+        });
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      Swal.close();
+      // toast.error("Oops, something went wrong!");
+    }
   };
 
   return (
     <div className=" mx-auto lg:p-8 p-2 bg-white shadow-lg rounded">
       {/* <h2 className="text-xl font-semibold mb-4">Contact Us</h2> */}
       <form onSubmit={handleSubmit}>
-    <div className=' flex justify-between'>
-    <div className="mb-4">
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
+        <div className=" flex justify-between">
+          <div className="mb-4">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Phone
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            />
+          </div>
         </div>
-        <div className="mb-4">
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-            Phone
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
-        </div>
-    </div>
-      
 
-<div className=' flex justify-between'>
-<div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
+        <div className=" flex justify-between">
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="subject"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            />
+          </div>
         </div>
-        <div className="mb-4">
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-            Subject
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
-        </div>
-</div>
 
         <div className="mb-4">
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700"
+          >
             Message
           </label>
           <textarea
