@@ -118,7 +118,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-sans text-[#33536B]">Dry Fruits</h3>
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Dry Fruits</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -133,7 +133,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
 
             {/* Products */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 place-content-center w-full place-items-center mt-12 ">
               {dryFruits?.map((product, index) => (
                 <ProductCard
                   index={index}
@@ -159,7 +159,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-sans text-[#33536B]">Millet</h3>
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Millet</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -174,7 +174,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
 
             {/* Products */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 place-content-center w-full place-items-center mt-12 ">
               {millet?.map((product, index) => (
                 <ProductCard
                   index={index}
@@ -197,7 +197,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-sans text-[#33536B]">Pulses</h3>
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Pulses</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -212,7 +212,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
 
             {/* Products */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 place-content-center w-full place-items-center  mt-12 ">
               {pulses?.map((product, index) => (
                 <ProductCard
                   index={index}
@@ -237,7 +237,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-sans text-[#33536B]">Spices</h3>
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Spices</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -252,7 +252,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
 
             {/* Products */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 place-content-center w-full place-items-center mt-12 ">
               {spices?.map((product, index) => (
                 <ProductCard
                   index={index}
@@ -279,7 +279,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-sans text-[#33536B]">Vegetable</h3>
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Vegetable</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -294,7 +294,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
 
             {/* Products */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 place-content-center w-full place-items-center mt-12 ">
               {vegetable?.map((product, index) => (
                 <ProductCard
                   index={index}
