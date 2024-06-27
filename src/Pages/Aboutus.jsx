@@ -1,74 +1,82 @@
 import React from 'react';
-import { FaStar, FaLeaf, FaTruck, FaHandsHelping } from 'react-icons/fa';
+import { FaStar, FaLeaf } from 'react-icons/fa';
 import Navbar from "../component/Header/Navbar";
 import Footer from "../component/common/Footer";
-
+import image from "../assests/home/v.jpg"; // Import your background image
 
 const AboutUs = () => {
   return (
-  <>
-   <Navbar />{" "}
-      <div className="max-w-5xl mx-auto py-8 px-4">
-      <section className="mb-12">
-        <h1 className="text-4xl font-bold mb-4 text-center">The Bharat Exporter</h1>
-        <p className="text-lg text-center mb-8">Your Trusted Source for Quality Agricultural Products and Spices</p>
-        <p className="text-lg text-center mb-8">
-          The Bharat Exporter is a leading manufacturer and supplier of agricultural products and spices, dedicated to providing high-quality goods to customers worldwide. With years of experience in the industry, we have established ourselves as a trusted name known for our commitment to excellence and customer satisfaction.
-        </p>
-      </section>
+    <>
+      <Navbar />
+      <div
+        className="bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundAttachment: 'fixed', // Optional: Adjust attachment as needed
+        }}
+      >
+        <div className="bg-white bg-opacity-80"> {/* Adjust opacity and color */}
+          <div className="max-w-5xl mx-auto py-8 px-4 text-gray-800">
+            <section className="mb-12 text-center">
+              <h1 className="text-4xl font-bold mb-4">Welcome to The Bharat Exporter</h1>
+              <p className="text-lg mb-8">Your Trusted Source for Quality Agricultural Products and Spices</p>
+              <p className="text-lg mb-8">
+                The Bharat Exporter is a leading manufacturer and supplier of agricultural products and spices, committed to delivering excellence worldwide. With a legacy of quality and customer satisfaction, we ensure that every product meets the highest standards from farm to table.
+              </p>
+            </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">Our Products</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div className="flex items-center">
-            <FaStar className="text-4xl text-green-600 mr-4" />
-            <div>
-              <h3 className="text-xl font-bold mb-2">Quality Agricultural Commodities</h3>
-              <p className="text-gray-700">
-                Our company specializes in the production and distribution of a diverse range of agricultural commodities, including grains, beans, and peas.
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-4">Discover Our Range</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="flex items-center bg-white bg-opacity-80 p-6 rounded-lg shadow-md">
+                  <FaStar className="text-4xl text-gray-600 mr-4" />
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Quality Agricultural Commodities</h3>
+                    <p className="text-gray-700">
+                      Explore our diverse selection of grains, beans, and pulses, sourced from the best farms and processed to perfection for superior taste and nutrition.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center bg-white bg-opacity-80 p-6 rounded-lg shadow-md">
+                  <FaLeaf className="text-4xl text-gray-600 mr-4" />
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Premium-Quality Spices</h3>
+                    <p className="text-gray-700">
+                      Indulge in our exquisite range of spices, handpicked and carefully processed to preserve their natural aroma and flavor, enhancing every culinary creation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-4">Our Commitment to Quality</h2>
+              <p className="text-lg mb-8 text-gray-800">
+                At The Bharat Exporter, quality is paramount. From sourcing the finest ingredients to rigorous quality control measures, we ensure that every product reflects our dedication to excellence.
               </p>
-            </div>
-          </div>
-          <div className="flex items-center">
-            <FaLeaf className="text-4xl text-green-600 mr-4" />
-            <div>
-              <h3 className="text-xl font-bold mb-2">Premium-Quality Spices</h3>
-              <p className="text-gray-700">
-                We offer an extensive selection of premium-quality spices, carefully sourced and processed to preserve their natural flavor and aroma.
+              <p className="text-lg mb-8 text-gray-800">
+                Our commitment extends beyond quality. We embrace sustainable practices and ethical sourcing to support local communities and preserve the environment for future generations.
               </p>
-            </div>
+            </section>
+
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-4">Customer Satisfaction Guaranteed</h2>
+              <p className="text-lg mb-8 text-gray-800">
+                We prioritize customer satisfaction with every interaction. Our responsive service and timely delivery ensure that your needs are met with efficiency and care.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Partner with Us</h2>
+              <p className="text-lg mb-8 text-gray-800">
+                Whether you are a wholesaler, retailer, or distributor, partner with The Bharat Exporter for premium agricultural products and spices. Experience the difference of working with a company driven by integrity, quality, and customer satisfaction.
+              </p>
+            </section>
           </div>
         </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">Our Commitment</h2>
-        <p className="text-lg mb-8">
-          At The Bharat Exporter, we prioritize quality and adhere to stringent standards throughout the manufacturing process. From sourcing raw materials to packaging the final products, every step is meticulously monitored to ensure consistency and freshness.
-        </p>
-        <p className="text-lg mb-8">
-          In addition to our focus on quality, we are also dedicated to sustainability and ethical business practices. We work closely with farmers and suppliers to promote responsible farming methods and support local communities.
-        </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">Customer Satisfaction</h2>
-        <p className="text-lg mb-8">
-          Our commitment to customer satisfaction extends beyond the quality of our products. We strive to provide exceptional service, with prompt delivery and responsive support, to meet the unique needs of our clients.
-        </p>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">Partner with Us</h2>
-        <p className="text-lg mb-8">
-          Whether you are a wholesaler, retailer, or distributor, The Bharat Exporter is your trusted partner for premium agricultural products and spices. Experience the difference of working with a company that values integrity, quality, and customer satisfaction above all else.
-        </p>
-      </section>
-    
-    </div>
-    <Footer />{" "}
-  </>
-
+      </div>
+      <Footer />
+    </>
   );
 };
 
