@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../common/ProductCard"; // Assuming this is where your ProductCard component is located
 import one from "../../assests/home/rice.png"; // Adjust the path as per your actual folder structure
 import two from "../../assests/home/corn.png";
 import three from "../../assests/home/mung.png";
 import four from "../../assests/home/peral.png"; // Adjust the variable name to lowercase 'four'
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ProductSection = () => {
-  const products = [
-    { imageUrl: one, title: "Rice", category: "Grains" },
-    { imageUrl: two, title: "Maize (Corn)", category: "Grains  " },
-    { imageUrl: four, title: "Pearl Millet (Bajra)", category: "Grains" },
-    { imageUrl: three, title: "Mung Bean", category: "Legumes" },
-  ];
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+  const [product, setProduct] = useState([]);
+  
+  const getAllProduct = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/product/getAll`);
 
+      console.log(response)
+      if (response?.data?.success) {
+        setProduct(response.data.products);
+        console.log(response.data.products)
+      }
+    } catch (error) {
+      console.log("Something went wrong");
+    }
+  };
+
+  useEffect(() => {
+    getAllProduct();
+  }, []);
+
+  const products = product?.slice(0, 4);
   return (
     <>
       <div className="container mx-auto mt-8 w-screen  ">
@@ -39,15 +55,23 @@ const ProductSection = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 ">
-          {products.map((product, index) => (
+         {
+         product.length===0 ? (
+          <div className="flex w-screen min-h-[200px] items-center justify-center">
+        <div className="spinner"></div>
+      </div>
+          ):(
+            products.map((product, index) => (
             <ProductCard
               index={index}
               key={index}
-              imageUrl={product.imageUrl}
+              imageUrl={product.image}
               title={product.title}
               category={product.category}
             />
-          ))}
+          ))
+          )
+         }
         </div>
       </div>
 

@@ -88,6 +88,10 @@ function AllProduct() {
   return (
     <>
       <Navbar />
+
+
+
+
       <div className=" w-screen">
       <div className="relative flex justify-center items-center w-full min-h-[50vh] -mt-2 bg-gradient-to-r bg-black">
   <div
@@ -98,11 +102,13 @@ function AllProduct() {
     Products
   </div>
 </div>
+{
+product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-center justify-center">
+        <div className="spinner"></div>
+      </div>) : (<>
 
-
-
-          {/* Dry Fruites */}
-        <div className=" w-11/12 mx-auto  mt-[60px]">
+            {/* Dry Fruites */}
+            <div className=" w-11/12 mx-auto  mt-[60px]">
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
@@ -218,6 +224,10 @@ function AllProduct() {
 
 
         </div>
+      </>)
+}
+
+
 
       </div>
       <Footer />
