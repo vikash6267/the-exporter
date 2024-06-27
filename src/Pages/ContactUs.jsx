@@ -21,7 +21,7 @@ function ContactUs() {
         {/* Addres */}
         <div className=" text-center flex lg:justify-between gap-3 lg:gap-0 flex-wrap items-center justify-center">
           <div className=" lg:w-[28%] w-[60%]">
-            <h3 className=" text-[#33536B] lg:text-3xl font-fjalla text-xl">
+            <h3 className=" text-[#33536B] lg:text-3xl font-sans text-xl">
               Address
             </h3>
             <p className=" text-[#7c7c7c] lg:text-xl text-sm">
@@ -29,13 +29,13 @@ function ContactUs() {
             </p>
           </div>
           <div className=" lg:w-[28%] w-[60%]">
-            <h3 className=" text-[#33536B] lg:text-3xl font-fjalla text-xl">
+            <h3 className=" text-[#33536B] lg:text-3xl font-sans text-xl">
               Call Us
             </h3>
             <p className=" text-[#7c7c7c] lg:text-xl text-sm">+917827992155</p>
           </div>
           <div className=" lg:w-[28%] w-[60%]">
-            <h3 className=" text-[#33536B] lg:text-3xl font-fjalla text-xl">
+            <h3 className=" text-[#33536B] lg:text-3xl font-sans text-xl">
               Mail Us
             </h3>
             <p className=" text-[#7c7c7c] lg:text-xl text-sm">
@@ -51,7 +51,7 @@ function ContactUs() {
           <div className="flex flex-col md:flex-row items-center justify-center mx-auto  py-12 px-4">
             {/* Left Side (Message Section) */}
             <div className="lg:w-[35%] md:w-[35%] w-full md:mr-8 mb-8 md:mb-0 text-center md:text-left">
-              <h2 className="text-3xl font-bold text-[#df794d] font-fjalla italic mb-4">
+              <h2 className="text-3xl font-bold text-[#df794d] font-sans italic mb-4">
                 Send A Message
               </h2>
               <p className="text-4xl text-gray-600 mb-4 ">

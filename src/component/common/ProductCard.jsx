@@ -84,21 +84,25 @@ const ProductCard = ({ imageUrl, title, category, index }) => {
 
   return (
     <div className="rounded overflow-hidden shadow-lg bg-white text-center">
-      <img src={imageUrl} alt="Product" className="w-full" />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2 text-33536B font-fjalla">
-          {title}
-        </div>
-        <p className="text-gray-700 text-base mb-2">
-          <span className="font-bold">Category:</span> {category}
-        </p>
-        <button
-          onClick={openModal}
-          className={`text-white w-full font-serif  py-2 px-4 rounded ${buttonColorClass} hover:bg-opacity-75`}
-        >
-          Send Inquiry
-        </button>
-      </div>
+     <div className="bg-white shadow-md rounded-lg overflow-hidden border-2">
+  <img src={imageUrl} alt="Product" className="w-full" />
+  <div className="px-6 py-4">
+    <div className="font-bold text-2xl mb-2 text-teal-700 font-sans">
+      {title}
+    </div>
+    <p className="text-gray-600 text-base mb-4">
+      <span className="font-bold">Category:</span> {category}
+    </p>
+    <button
+      onClick={openModal}
+      className={`text-white w-full font-serif py-2 px-4 rounded ${buttonColorClass} hover:bg-opacity-75`}
+      
+    >
+      Send Inquiry
+    </button>
+  </div>
+</div>
+
 
       {/* Modal */}
       {showModal && (

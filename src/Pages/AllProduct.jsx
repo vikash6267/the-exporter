@@ -50,7 +50,9 @@ function AllProduct() {
   const [product, setProduct] = useState([]);
   const [dryFruits, setDryFruits] = useState([]);
   const [millet , setMillet ] = useState([]);
-  const [Pulses , setPulses ] = useState([]);
+  const [pulses , setPulses ] = useState([]);
+  const [spices , setSpices ] = useState([]);
+  const [vegetable , setVegetable ] = useState([]);
 
 
 
@@ -75,7 +77,9 @@ function AllProduct() {
   useEffect(() => {
     const dryFruitsProducts = product.filter(item => item.category === "DryFruits");
     const Millet  = product.filter(item => item.category === "Millet ");
-    const Pulses  = product.filter(item => item.category === "Pulses ");
+    const Pulses  = product.filter(item => item.category === "Pulses");
+    const Spices  = product.filter(item => item.category === "Spices");
+    const Vegetable  = product.filter(item => item.category === "Vegetable");
    
    
    
@@ -83,6 +87,8 @@ function AllProduct() {
     setDryFruits(dryFruitsProducts);
     setMillet(Millet)
     setPulses(Pulses)
+    setSpices(Spices)
+    setVegetable(Vegetable)
    
   }, [product]);
   return (
@@ -112,7 +118,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-fjalla text-[#33536B]">Dry Fruits</h3>
+              <h3 className="  text-4xl font-sans text-[#33536B]">Dry Fruits</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -153,7 +159,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-fjalla text-[#33536B]">Millet</h3>
+              <h3 className="  text-4xl font-sans text-[#33536B]">Millet</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -191,7 +197,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-fjalla text-[#33536B]">Pulses</h3>
+              <h3 className="  text-4xl font-sans text-[#33536B]">Pulses</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -207,7 +213,7 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
             {/* Products */}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
-              {Pulses?.map((product, index) => (
+              {pulses?.map((product, index) => (
                 <ProductCard
                   index={index}
                   key={index}
@@ -224,6 +230,94 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
 
 
         </div>
+
+
+    {/* Spices */}
+    <div className=" w-11/12 mx-auto  mt-[60px]">
+          <div>
+            {/* Heading */}
+            <div className=" flex flex-col  w-full items-center">
+              <h3 className="  text-4xl font-sans text-[#33536B]">Spices</h3>
+              <div className="flex items-center w-[75px]">
+                <div className="h-0.5 bg-[#e2571a]"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div
+                  className="h-[4px] rounded-full w-[10px] flex-grow"
+                  style={{ backgroundColor: "#e2571a" }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Products */}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+              {spices?.map((product, index) => (
+                <ProductCard
+                  index={index}
+                  key={index}
+                  imageUrl={product.image}
+                  title={product.name}
+                  category={product.category}
+                />
+              ))}
+            </div>
+          </div>
+
+       
+
+
+
+        </div>
+
+
+
+
+{/* Vegetable */}
+<div className=" w-11/12 mx-auto  mt-[60px]">
+          <div>
+            {/* Heading */}
+            <div className=" flex flex-col  w-full items-center">
+              <h3 className="  text-4xl font-sans text-[#33536B]">Vegetable</h3>
+              <div className="flex items-center w-[75px]">
+                <div className="h-0.5 bg-[#e2571a]"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div
+                  className="h-[4px] rounded-full w-[10px] flex-grow"
+                  style={{ backgroundColor: "#e2571a" }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Products */}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+              {vegetable?.map((product, index) => (
+                <ProductCard
+                  index={index}
+                  key={index}
+                  imageUrl={product.image}
+                  title={product.name}
+                  category={product.category}
+                />
+              ))}
+            </div>
+          </div>
+
+       
+
+
+
+        </div>
+
+
+
+
+
+
       </>)
 }
 

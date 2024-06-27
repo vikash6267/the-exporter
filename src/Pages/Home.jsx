@@ -13,9 +13,9 @@ function Home() {
     <div>
       <Navbar />
       <HeroSlider />
-      <SecondSection />
       <AboutSection />
       <ProductSection />
+      <SecondSection />
       <SupplyChain />
       <WhyChoose />
       <Footer />

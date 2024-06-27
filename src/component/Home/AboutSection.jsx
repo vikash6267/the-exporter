@@ -23,13 +23,13 @@ function AboutSection() {
       {/* Image Section */}
       <div className="relative lg:w-[44%] md:w-[44%] w-full">
         <img
-          src={image}
+          src="https://img3.exportersindia.com/product_images/bc-full/dir_56/1658058/freight-forwarding-agents_1145413.jpg"
           alt="Background"
           className="w-full h-[40vh] lg:h-full object-cover"
         />
   
 
-  <div className="absolute top-8 left-4 text-white font-bold text-lg z-10 text-center bg-white lg:p-4 p-1 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm" style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+  <div className="absolute bottom-8 right-4 text-white font-bold text-lg z-10 text-center bg-white lg:p-4 p-1 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm" style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
         <p className="lg:text-6xl text-[#e2571a]">{count}+</p>
         <p className=' text-[#5A5A5A]'>Years of Experience</p>
       </div>
@@ -39,9 +39,9 @@ function AboutSection() {
 
       {/* Data Section */}
       <div className="lg:w-1/2 md:w-1/2 w-full bg-white shadow-lg rounded-lg p-6">
-      <p className="text-[#e2571a] font-fjalla italic text-lg">About The Bharat Exporter</p>
-      <h2 className="text-[#33536B] lg:text-4xl md:text-4xl text-2xl font-sans font-bold mt-2">
-        GRAIN AND SPICES SUPPLIER IN SURAT
+      <p className="text-[#e2571a] font-sans italic text-lg">About The Bharat Exporter</p>
+      <h2 className="text-[#33536B] lg:text-4xl md:text-4xl text-2xl font-sans font-bold mt-2 uppercase">
+      Premier Supplier of Grains and Spices Based in Surat
       </h2>
       <p className="text-[#5A5A5A] mt-2 leading-relaxed text-[12px] lg:text-[14px]">
         The Bharat Exporter is a dynamic import-export enterprise committed to facilitating seamless global trade.
