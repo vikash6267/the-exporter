@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 import Navbar from "../component/Header/Navbar";
 import ProductCard from "../component/common/ProductCard";
 import two from "../assests/home/corn.png";
@@ -9,6 +11,7 @@ import bean3 from "../assests/home/kabuli.png";
 import bean4 from "../assests/home/mung.png";
 import one from "../assests/home/rice.png";
 import Footer from "../component/common/Footer";
+import contact from "../assests/contact.jpg"
 
 const grains = [
   { imageUrl: one, title: "Rice", category: "Grains" },
@@ -41,20 +44,69 @@ const beans = [
 ];
 
 function AllProduct() {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+
+
+  const [product, setProduct] = useState([]);
+  const [dryFruits, setDryFruits] = useState([]);
+  const [millet , setMillet ] = useState([]);
+  const [Pulses , setPulses ] = useState([]);
+
+
+
+  const getAllProduct = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/product/getAll`);
+
+      console.log(response)
+      if (response?.data?.success) {
+        setProduct(response.data.products);
+        console.log(response.data.products)
+      }
+    } catch (error) {
+      console.log("Something went wrong");
+    }
+  };
+
+  useEffect(() => {
+    getAllProduct();
+  }, []);
+
+  useEffect(() => {
+    const dryFruitsProducts = product.filter(item => item.category === "DryFruits");
+    const Millet  = product.filter(item => item.category === "Millet ");
+    const Pulses  = product.filter(item => item.category === "Pulses ");
+   
+   
+   
+   
+    setDryFruits(dryFruitsProducts);
+    setMillet(Millet)
+    setPulses(Pulses)
+   
+  }, [product]);
   return (
     <>
       <Navbar />
       <div className=" w-screen">
-        <div className="text-center flex justify-center items-center text-[#33536B] w-full font-semibold text-5xl min-h-[140px] mt-2 bg-gradient-to-r from-teal-400 to-cyan-500">
-          Products
-        </div>
+      <div className="relative flex justify-center items-center w-full min-h-[50vh] -mt-2 bg-gradient-to-r bg-black">
+  <div
+    className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-60"
+    style={{ backgroundImage: `url(https://www.nuskhakitchen.com/public/img/uploads/products/75701693206563.jpg)` }}
+  />
+  <div className="relative z-50 text-[#fff5f5] font-semibold text-5xl bg-[#e2571a] p-1 rounded-2xl">
+    Products
+  </div>
+</div>
 
-        <div className=" w-11/12 mx-auto mt-[60px]">
-          {/* Grains */}
+
+
+          {/* Dry Fruites */}
+        <div className=" w-11/12 mx-auto  mt-[60px]">
           <div>
             {/* Heading */}
             <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-fjalla text-[#33536B]">Grains</h3>
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Dry Fruits</h3>
               <div className="flex items-center w-[75px]">
                 <div className="h-0.5 bg-[#e2571a]"></div>
                 <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
@@ -70,40 +122,7 @@ function AllProduct() {
             {/* Products */}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
-              {grains.map((product, index) => (
-                <ProductCard
-                  index={index}
-                  key={index}
-                  imageUrl={product.imageUrl}
-                  title={product.title}
-                  category={product.category}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className=" mt-[60px]">
-            {/* Heading */}
-            <div className=" flex flex-col  w-full items-center">
-              <h3 className="  text-4xl font-fjalla text-[#33536B]">
-                Beans & Peas
-              </h3>
-              <div className="flex items-center w-[75px]">
-                <div className="h-0.5 bg-[#e2571a]"></div>
-                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
-                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
-                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
-                <div
-                  className="h-[4px] rounded-full w-[10px] flex-grow"
-                  style={{ backgroundColor: "#e2571a" }}
-                ></div>
-              </div>
-            </div>
-
-            {/* Products */}
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
-              {beans.map((product, index) => (
+              {dryFruits?.map((product, index) => (
                 <ProductCard
                   index={index}
                   key={index}
@@ -114,7 +133,92 @@ function AllProduct() {
               ))}
             </div>
           </div>
+
+       
+
+
+
         </div>
+
+
+
+          {/* Millet */}
+        <div className=" w-11/12 mx-auto  mt-[60px]">
+          <div>
+            {/* Heading */}
+            <div className=" flex flex-col  w-full items-center">
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Millet</h3>
+              <div className="flex items-center w-[75px]">
+                <div className="h-0.5 bg-[#e2571a]"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div
+                  className="h-[4px] rounded-full w-[10px] flex-grow"
+                  style={{ backgroundColor: "#e2571a" }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Products */}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+              {millet?.map((product, index) => (
+                <ProductCard
+                  index={index}
+                  key={index}
+                  imageUrl={product.image}
+                  title={product.name}
+                  category={product.category}
+                />
+              ))}
+            </div>
+          </div>
+
+       
+
+
+
+        </div>
+          {/* Pulses */}
+        <div className=" w-11/12 mx-auto  mt-[60px]">
+          <div>
+            {/* Heading */}
+            <div className=" flex flex-col  w-full items-center">
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Pulses</h3>
+              <div className="flex items-center w-[75px]">
+                <div className="h-0.5 bg-[#e2571a]"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div
+                  className="h-[4px] rounded-full w-[10px] flex-grow"
+                  style={{ backgroundColor: "#e2571a" }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Products */}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 place-content-center w-full place-items-center ">
+              {Pulses?.map((product, index) => (
+                <ProductCard
+                  index={index}
+                  key={index}
+                  imageUrl={product.image}
+                  title={product.name}
+                  category={product.category}
+                />
+              ))}
+            </div>
+          </div>
+
+       
+
+
+
+        </div>
+
       </div>
       <Footer />
     </>

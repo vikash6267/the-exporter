@@ -39,32 +39,29 @@ function AboutSection() {
 
       {/* Data Section */}
       <div className="lg:w-1/2 md:w-1/2 w-full bg-white shadow-lg rounded-lg p-6">
-        <p className="text-[#e2571a] font-fjalla italic text-lg">About The Bharat Exporter</p>
-        <h2 className="text-[#33536B] lg:text-4xl md:text-4xl text-2xl font-sans font-bold mt-2">GRAIN AND SPICES SUPPLIER IN SURAT</h2>
-        <p className="text-[#5A5A5A] mt-2 leading-relaxed text-[12px] lg:text-[14px]">
-          Saivleen International is an active import-export enterprise dedicated
-          to enabling seamless global trade. With a firm commitment to goodness,
-          we specialize in connecting businesses worldwide, bridging gaps in the
-          market with efficiency and reliability. We prioritize ethical business
-          practices and foster trust-based relationships with clients and
-          partners. Our extensive network and a deep understanding of
-          international trade regulations ensure smooth transactions and mutually
-          beneficial partnerships. As a premier grain and Spice supplier in
-          Surat, we provide top-quality products to our clients on time.
-          Leveraging our expertise, we also excel as Grain and Spices exporters
-          in Surat, delivering excellence in every shipment. At Saivleen
-          International, we strive to exceed expectations, driving growth and
-          prosperity for our clients and stakeholders.
-        </p>
-        <div className="mt-4">
-          <Link
-            to="/product"
-            className="bg-[#e2571a] text-white py-2 px-6 rounded-lg uppercase font-sans font-semibold hover:bg-[#5A5A5A] transition duration-300 ease-in-out"
-          >
-            Discover All Products
-          </Link>
-        </div>
+      <p className="text-[#e2571a] font-fjalla italic text-lg">About The Bharat Exporter</p>
+      <h2 className="text-[#33536B] lg:text-4xl md:text-4xl text-2xl font-sans font-bold mt-2">
+        GRAIN AND SPICES SUPPLIER IN SURAT
+      </h2>
+      <p className="text-[#5A5A5A] mt-2 leading-relaxed text-[12px] lg:text-[14px]">
+        The Bharat Exporter is a dynamic import-export enterprise committed to facilitating seamless global trade.
+        With a strong dedication to quality and integrity, we connect businesses around the world, bridging market gaps
+        with efficiency and reliability. We emphasize ethical business practices and nurture trust-based relationships
+        with our clients and partners. Our expansive network and in-depth understanding of international trade regulations
+        ensure smooth transactions and mutually beneficial partnerships. As a leading grain and spice supplier in Surat,
+        we provide our clients with top-quality products, delivered on time. Our expertise extends to exporting grains
+        and spices from Surat, where we consistently uphold excellence in every shipment. At The Bharat Exporter, our mission
+        is to exceed expectations, fostering growth and prosperity for our clients and stakeholders.
+      </p>
+      <div className="mt-4">
+        <Link
+          to="/product"
+          className="bg-[#e2571a] text-white py-2 px-6 rounded-lg uppercase font-sans font-semibold hover:bg-[#5A5A5A] transition duration-300 ease-in-out"
+        >
+          Discover All Products
+        </Link>
       </div>
+    </div>
       
     </div>
   );

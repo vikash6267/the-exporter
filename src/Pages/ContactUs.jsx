@@ -8,10 +8,15 @@ function ContactUs() {
   return (
     <div>
       <Navbar />
-
-      <div className="text-center flex justify-center items-center text-[#33536B] w-full font-semibold text-5xl min-h-[140px] mt-2 bg-gradient-to-r from-teal-400 to-cyan-500">
-        Contact Us
-      </div>
+      <div className="relative flex justify-center items-center w-full min-h-[40vh] -mt-2 bg-gradient-to-r bg-black">
+  <div
+    className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-60"
+    style={{ backgroundImage: `url(https://static.vecteezy.com/system/resources/thumbnails/016/798/942/small_2x/contact-us-concept-business-man-consulting-customers-who-contact-us-call-center-service-customer-consulting-service-email-hotline-business-contact-digital-online-business-digital-service-photo.jpg)` }}
+  />
+  <div className="absolute bottom-2 z-50 text-[#fff5f5] font-semibold text-5xl bg-[#e2571a] p-1 rounded-2xl">
+    Contact Us
+  </div>
+</div>
       <div className=" w-11/12 mx-auto mt-[40px] ">
         {/* Addres */}
         <div className=" text-center flex lg:justify-between gap-3 lg:gap-0 flex-wrap items-center justify-center">
