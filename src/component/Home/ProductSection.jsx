@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react";
-import ProductCard from "../common/ProductCard"; // Assuming this is where your ProductCard component is located
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { FaAppleAlt, FaSeedling, FaLeaf, FaPepperHot, FaCarrot, FaFlask } from 'react-icons/fa';
+
+
+import rice  from "../../assests/category/rice.jpg"
+import dry from "../../assests/category/dry.jpg"
+import pulse from "../../assests/category/pulses.jpg"
+import powder  from "../../assests/category/spice.jpg"
+import vege from "../../assests/category/vegetable.jpg"
+import spicekhada  from "../../assests/category/kahdespice.jpg"
+import millet  from "../../assests/category/millet.jpg"
+import fruits  from "../../assests/category/fruits.jpg"
+
+
 
 const categories = [
-  { name: 'Dry Fruits', icon: <FaAppleAlt />, link: '/DryFruits' },
-  { name: 'Millets', icon: <FaSeedling />, link: `/Millet ` },
-  { name: 'Pulses', icon: <FaLeaf />, link: '/Pulses' },
-  { name: 'Spices', icon: <FaPepperHot />, link: '/Spices' },
-  { name: 'Vegetables', icon: <FaCarrot />, link: '/Vegetable' },
-  { name: 'Powders', icon: <FaFlask />, link: '/Powders' },
+  { name: 'Dry Fruits', image:dry , link: '/DryFruits' },
+  { name: 'Millets', image: millet, link: `/Millet ` },
+  { name: 'Pulses', image: pulse, link: '/Pulses' },
+  { name: 'Spices', image: spicekhada, link: '/Spices' },
+  { name: 'Vegetables', image: vege, link: '/Vegetable' },
+  { name: 'Powders', image: powder, link: '/Powders' },
+  { name: 'Rice', image: rice, link: '/Rice' },
+  { name: 'Fruits', image: fruits, link: '/Fruits' },
 ];
 
 
@@ -49,20 +60,20 @@ const ProductSection = () => {
 
 
         <div className="bg-gray-100 p-1">
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categories.map((category, index) => (
-          <Link to={`category${category.link}`} key={index} className="transform transition-transform hover:scale-105">
-            <div className="bg-white p-1 rounded-lg shadow-md flex flex-col items-center hover:bg-gray-200">
-              <div className="text-4xl text-gray-700 mb-4 hover:text-blue-500">
-                {category.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 hover:text-blue-500">
-                {category.name}
-              </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categories.map((category, index) => (
+        <Link to={`category${category.link}`} key={index} className="transform transition-transform hover:scale-105">
+          <div
+            className="relative bg-cover bg-center bg-no-repeat rounded-lg shadow-md overflow-hidden"
+            style={{ backgroundImage: `url(${category.image})`, minHeight: '200px' }}
+          >
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity opacity-100 ">
+              <h3 className="text-white text-2xl font-semibold text-center">{category.name}</h3>
             </div>
-          </Link>
-        ))}
-      </div>
+          </div>
+        </Link>
+      ))}
+    </div>
     </div>
 
 
