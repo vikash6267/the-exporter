@@ -48,11 +48,11 @@ const ProductSection = () => {
 
 
 
-        <div className="bg-gray-100 p-8">
+        <div className="bg-gray-100 p-1">
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {categories.map((category, index) => (
           <Link to={`category${category.link}`} key={index} className="transform transition-transform hover:scale-105">
-            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center hover:bg-gray-200">
+            <div className="bg-white p-1 rounded-lg shadow-md flex flex-col items-center hover:bg-gray-200">
               <div className="text-4xl text-gray-700 mb-4 hover:text-blue-500">
                 {category.icon}
               </div>
