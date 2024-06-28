@@ -2,48 +2,22 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../common/ProductCard"; // Assuming this is where your ProductCard component is located
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { FaAppleAlt, FaSeedling, FaLeaf, FaPepperHot, FaCarrot, FaFlask } from 'react-icons/fa';
+
+const categories = [
+  { name: 'Dry Fruits', icon: <FaAppleAlt />, link: '/DryFruits' },
+  { name: 'Millets', icon: <FaSeedling />, link: `/Millet ` },
+  { name: 'Pulses', icon: <FaLeaf />, link: '/Pulses' },
+  { name: 'Spices', icon: <FaPepperHot />, link: '/Spices' },
+  { name: 'Vegetables', icon: <FaCarrot />, link: '/Vegetable' },
+  { name: 'Powders', icon: <FaFlask />, link: '/Powders' },
+];
+
+
+
 
 const ProductSection = () => {
-  const BASE_URL = process.env.REACT_APP_BASE_URL;
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}/product/getAll`);
-      if (response.data.success) {
-        setProducts(response.data.products);
-      }
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const renderProducts = () => {
-    if (loading) {
-      return (
-        <div className="flex w-screen min-h-[200px] items-center justify-center">
-          <div className="spinner"></div>
-        </div>
-      );
-    }
-
-    return products.slice(0, 4).map((product, index) => (
-      <ProductCard
-        key={index}
-        index={index}
-        imageUrl={product.image}
-        title={product.name}
-        category={product.category}
-      />
-    ));
-  };
 
   return (
     <>
@@ -69,9 +43,33 @@ const ProductSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-          {renderProducts()}
-        </div>
+        <div className="bg-gray-100 p-8">
+  
+
+
+
+        <div className="bg-gray-100 p-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map((category, index) => (
+          <Link to={`category${category.link}`} key={index} className="transform transition-transform hover:scale-105">
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center hover:bg-gray-200">
+              <div className="text-4xl text-gray-700 mb-4 hover:text-blue-500">
+                {category.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 hover:text-blue-500">
+                {category.name}
+              </h3>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+
+
+
+
+
+    </div>
       </div>
 
       <div className="flex justify-center mt-8">

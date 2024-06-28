@@ -39,8 +39,9 @@ const createContactCtrl = async (req, res) => {
 
 const createEnquiryCtrl = async (req, res) => {
     try {
-        const { name, companyName, product, quantity, email, contactNumber, country, state, address } = req.body;
-        if (!name || !companyName || !product || !quantity || !email || !contactNumber || !country || !state || !address) {
+        console.log(req.body)
+        const { name, companyName, product, quantity, email, contactNumber, country, state, address ,city,phoneCode} = req.body;
+        if (!name || !companyName || !product || !quantity || !email || !contactNumber || !country || !state || !city || !address ||!phoneCode) {
             return res.status(400).json({
                 success: false,
                 message: "All fields are required!"
@@ -50,7 +51,7 @@ const createEnquiryCtrl = async (req, res) => {
         const emailRes = await mailSender(
             "vikasmaheshwari6267@gmail.com",
             "Your Data send successfully",
-            enquiryEmail(name, companyName, product, quantity, email, contactNumber, country, state, address)
+            enquiryEmail(name, companyName, product, quantity, email, contactNumber, country, state,city, address,phoneCode)
         )
         res.status(200).send({
             message: "Email send successfully.Our team will contact you soon!",

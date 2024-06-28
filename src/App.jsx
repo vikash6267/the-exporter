@@ -13,6 +13,7 @@ import Login from "./component/Admin/pages/Login";
 import Dashboard from "./component/Admin/pages/Dashboard";
 import Blog from "./Pages/Blog";
 import SingleBlog from "./Pages/SingleBlog";
+import Category from "./Pages/Category";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/product" element={<AllProduct />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogs/:blog" element={<SingleBlog />} />
+        <Route path="/category/:cate" element={<Category />} />
 
         <Route
           path="/login"

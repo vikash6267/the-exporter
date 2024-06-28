@@ -1,11 +1,14 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { Country, State, City } from "country-state-city";
+
 
 const ProductCard = ({ imageUrl, title, category, index }) => {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
+    phoneCode:"",
     companyName: "",
     product: title,
     quantity: "",
@@ -13,8 +16,45 @@ const ProductCard = ({ imageUrl, title, category, index }) => {
     contactNumber: "",
     country: "",
     state: "",
+    city:"",
     address: "",
   });
+  const [countryCode, setCountryCode] = useState("");
+  const [countries, setCountries] = useState([]);
+const [states, setStates] = useState([]);
+const [cities, setCities] = useState([]);
+
+useEffect(() => {
+  const countriesData = Country.getAllCountries();
+  console.log(countriesData)
+  setCountries(countriesData);
+}, []);
+
+
+const handleCountryChange = async(e) => {
+  const countryCode = e.target.value;
+  const selectedCountry = countries.find(country => country.isoCode === countryCode);
+  
+  if (selectedCountry) {
+    const statesData = await State.getStatesOfCountry(countryCode);
+    setFormData({ ...formData, country: countryCode, state: "", city: "" });
+  
+    setStates(statesData);
+  }
+};
+
+const handleStateChange = async (e) => {
+  const stateCode = e.target.value;
+  const selectedState = states.find(state => state.isoCode === stateCode);
+  if (selectedState) {
+    const citiesData = City.getCitiesOfState(formData.country, stateCode);
+    setFormData({ ...formData, state: stateCode, city: "" });
+    setCities(citiesData);
+  }
+};
+
+
+
 
   const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -50,7 +90,7 @@ const ProductCard = ({ imageUrl, title, category, index }) => {
         `${BASE_URL}/contact/enquiry`,
         formData
       );
-
+console.log(response)
       Swal.close();
 
       if (response?.data?.success) {
@@ -68,6 +108,7 @@ const ProductCard = ({ imageUrl, title, category, index }) => {
           contactNumber: "",
           country: "",
           state: "",
+          city:"",
           address: "",
         });
         closeModal(); // Close modal after form submission
@@ -106,16 +147,16 @@ const ProductCard = ({ imageUrl, title, category, index }) => {
       {/* Modal */}
       {showModal && (
         <div className="fixed z-50 inset-0 overflow-y-auto">
-          <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+          <div className="flex items- justify- min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div className="fixed inset-0 transition-opacity">
               <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
             </div>
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
             &#8203;
-            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8  sm:max-w-lg sm:w-full">
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div className="sm:flex sm:items-start">
-                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                  <div className="mt-3 text- sm:mt-0 sm:ml-4 sm:text-left w-full">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">
                       Send Inquiry
                     </h3>
@@ -169,7 +210,7 @@ const ProductCard = ({ imageUrl, title, category, index }) => {
                           </div>
                           <div className="w-full px-3">
                             <label htmlFor="quantity" className="input-label">
-                              Quantity
+                              Unit KG
                             </label>
                             <input
                               type="text"
@@ -196,52 +237,110 @@ const ProductCard = ({ imageUrl, title, category, index }) => {
                               className="input-field"
                             />
                           </div>
+
+
+
+
                           <div className="w-full px-3">
-                            <label
-                              htmlFor="contactNumber"
-                              className="input-label"
-                            >
-                              Contact Number
-                            </label>
-                            <input
-                              type="tel"
-                              id="contactNumber"
-                              name="contactNumber"
-                              value={formData.contactNumber}
-                              onChange={handleInputChange}
-                              required
-                              autoComplete="tel"
-                              className="input-field"
-                            />
-                          </div>
+      <label htmlFor="contactNumber" className="input-label">
+        Contact Number
+      </label>
+      <div className="flex">
+        <select
+          id="phoneCode"
+          name="phoneCode"
+          value={formData.phoneCode}
+          onChange={handleInputChange}
+          className="input-field rounded-r-none max-w-[130px]"
+        >
+          {countries.map((country) => (
+            <option key={country.phonecode} value={country.phonecode}>
+              {country.isoCode} ({country.phonecode})
+            </option>
+          ))}
+        </select>
+        <input
+          type="tel"
+          id="contactNumber"
+          name="contactNumber"
+          value={formData.contactNumber}
+          onChange={handleInputChange}
+          required
+          autoComplete="tel"
+          className="input-field rounded-l-none"
+        />
+      </div>
+    </div>
+
+
+
+                      
+
                           <div className="w-full px-3">
-                            <label htmlFor="country" className="input-label">
-                              Country
-                            </label>
-                            <input
-                              type="text"
-                              id="country"
-                              name="country"
-                              value={formData.country}
-                              onChange={handleInputChange}
-                              required
-                              className="input-field"
-                            />
-                          </div>
-                          <div className="w-full px-3">
-                            <label htmlFor="state" className="input-label">
-                              State
-                            </label>
-                            <input
-                              type="text"
-                              id="state"
-                              name="state"
-                              value={formData.state}
-                              onChange={handleInputChange}
-                              required
-                              className="input-field"
-                            />
-                          </div>
+  <label htmlFor="country" className="input-label">
+    Country
+  </label>
+  <select
+    id="country"
+    name="country"
+    value={formData.country}
+    onChange={handleCountryChange}
+    required
+    className="input-field"
+  >
+    <option value="">Select Country</option>
+    {countries.map(country => (
+      <option key={country.isoCode} value={country.isoCode}>
+        {country.name}
+      </option>
+    ))}
+  </select>
+</div>
+
+<div className="w-full px-3">
+  <label htmlFor="state" className="input-label">
+    State
+  </label>
+  <select
+    id="state"
+    name="state"
+    value={formData.state}
+    onChange={handleStateChange}
+    required
+    className="input-field"
+  >
+    <option value="">Select State</option>
+    {states.map(state => (
+      <option key={state.isoCode} value={state.isoCode}>
+        {state.name}
+      </option>
+    ))}
+  </select>
+</div>
+
+<div className="w-full px-3">
+  <label htmlFor="city" className="input-label">
+    City
+  </label>
+  <select
+    id="city"
+    name="city"
+    value={formData.city}
+    onChange={handleInputChange}
+    required
+    className="input-field"
+  >
+    <option value="">Select City</option>
+    {cities.map(city => (
+      <option key={city.id} value={city.name}>
+        {city.name}
+      </option>
+    ))}
+  </select>
+</div>
+
+
+
                           <div className="w-full px-3">
                             <label htmlFor="address" className="input-label">
                               Address

@@ -41,7 +41,7 @@ function AboutSection() {
       <div className="lg:w-1/2 md:w-1/2 w-full bg-white shadow-lg rounded-lg p-6">
       <p className="text-[#e2571a] font-sans italic text-lg">About The Bharat Exporter</p>
       <h2 className="text-[#33536B] lg:text-4xl md:text-4xl text-2xl font-sans font-bold mt-2 uppercase">
-      Premier Supplier of Grains and Spices Based in Surat
+      Premier Supplier of Grains and Spices Based in Bharat (India)
       </h2>
       <p className="text-[#5A5A5A] mt-2 leading-relaxed text-[12px] lg:text-[14px]">
         The Bharat Exporter is a dynamic import-export enterprise committed to facilitating seamless global trade.

@@ -53,6 +53,7 @@ function AllProduct() {
   const [pulses , setPulses ] = useState([]);
   const [spices , setSpices ] = useState([]);
   const [vegetable , setVegetable ] = useState([]);
+  const [powders , setPowders ] = useState([]);
 
 
 
@@ -76,10 +77,11 @@ function AllProduct() {
 
   useEffect(() => {
     const dryFruitsProducts = product.filter(item => item.category === "DryFruits");
-    const Millet  = product.filter(item => item.category === "Millet ");
+    const Millet  = product.filter(item => item.category === "Millet");
     const Pulses  = product.filter(item => item.category === "Pulses");
     const Spices  = product.filter(item => item.category === "Spices");
     const Vegetable  = product.filter(item => item.category === "Vegetable");
+    const powders  = product.filter(item => item.category === "Powders");
    
    
    
@@ -89,6 +91,7 @@ function AllProduct() {
     setPulses(Pulses)
     setSpices(Spices)
     setVegetable(Vegetable)
+    setPowders(powders)
    
   }, [product]);
   return (
@@ -296,6 +299,45 @@ product.length===0 ? (   <div className="flex w-screen min-h-[200px] items-cente
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 place-content-center w-full place-items-center mt-12 ">
               {vegetable?.map((product, index) => (
+                <ProductCard
+                  index={index}
+                  key={index}
+                  imageUrl={product.image}
+                  title={product.name}
+                  category={product.category}
+                />
+              ))}
+            </div>
+          </div>
+
+       
+
+
+
+        </div>
+
+{/* powders */}
+<div className=" w-11/12 mx-auto  mt-[60px]">
+          <div>
+            {/* Heading */}
+            <div className=" flex flex-col  w-full items-center">
+              <h3 className="  text-4xl font-fjalla text-[#33536B]">Powders</h3>
+              <div className="flex items-center w-[75px]">
+                <div className="h-0.5 bg-[#e2571a]"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div className="h-1 w-1 bg-[#e2571a] rounded-full mx-1"></div>
+                <div
+                  className="h-[4px] rounded-full w-[10px] flex-grow"
+                  style={{ backgroundColor: "#e2571a" }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Products */}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 place-content-center w-full place-items-center mt-12 ">
+              {powders?.map((product, index) => (
                 <ProductCard
                   index={index}
                   key={index}
