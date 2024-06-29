@@ -26,7 +26,7 @@ const AboutUs = () => {
           <MdOutlineSupervisorAccount className="text-blue-500 mr-2" /> OUR TEAM
         </h2>
         <p>
-          Both the employees and business partners have made a major contribution to VAD Industries' strong foundation. We are proud to have such team players incorporating years of expertise in providing customers with a range of import and export solutions. Our leaders' approach is always intended to provide visibility, reliability, and consistency of product and unwavering commitment towards customer satisfaction. Advent our customers with distinguished qualities and fulfill their product-related requirements with full fidelity is the prime priority of our team. In addition, our logistics program makes it easy to maintain up-to-date communication with clients and take a customer-centric approach, and ensure express delivery before the committed time frame.
+          Both the employees and business partners have made a major contribution to The Bharat Exporter strong foundation. We are proud to have such team players incorporating years of expertise in providing customers with a range of import and export solutions. Our leaders' approach is always intended to provide visibility, reliability, and consistency of product and unwavering commitment towards customer satisfaction. Advent our customers with distinguished qualities and fulfill their product-related requirements with full fidelity is the prime priority of our team. In addition, our logistics program makes it easy to maintain up-to-date communication with clients and take a customer-centric approach, and ensure express delivery before the committed time frame.
         </p>
       </section>
       
