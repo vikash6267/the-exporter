@@ -102,9 +102,9 @@ function AllProduct() {
       <div className=" w-screen">
         <div className="relative flex justify-center items-center w-full min-h-[50vh] -mt-2 bg-gradient-to-r bg-black">
           <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-60"
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-40"
             style={{
-              backgroundImage: `url(https://www.nuskhakitchen.com/public/img/uploads/products/75701693206563.jpg)`,
+              backgroundImage: `url(https://t3.ftcdn.net/jpg/05/00/04/52/360_F_500045261_FfPbsyx4CRm5aUkaLAqb7updn7b0ngud.jpg)`,
             }}
           />
           <div className="relative z-50 text-[#fff5f5] font-semibold text-5xl bg-[#e2571a] p-1 rounded-2xl">
