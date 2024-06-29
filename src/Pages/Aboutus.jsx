@@ -3,11 +3,16 @@ import Navbar from "../component/Header/Navbar";
 import Footer from "../component/common/Footer";
 import image from "../assests/home/v.jpg"; 
 
-import { FaUserTie, FaHandsHelping, FaLeaf, FaGavel, FaBullseye, FaChartLine } from 'react-icons/fa';
+import { FaUserTie, FaHandsHelping, FaLeaf, FaGavel,FaCertificate , FaBullseye, FaChartLine } from 'react-icons/fa';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 
 import founder from "../assests/about/sumit.jpg"
 import ceo from "../assests/about/rk.png"
+
+import cer1 from "../assests/certifacte/1.jpg"
+import cer2 from "../assests/certifacte/2.jpg"
+import cer3 from "../assests/certifacte/3.jpg"
+
 
 const AboutUs = () => {
   return (
@@ -120,6 +125,19 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      <section className="space-y-4">
+  <h2 className="text-2xl font-bold flex items-center">
+    <FaCertificate className="text-orange-500 mr-2" /> Our Certificates
+  </h2>
+  <div className="flex flex-col flex-wrap justify-center gap-3 lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4">
+    <img src={cer1} alt="Certificate 1" className="lg:w-[35%] w-screen lg:h-[80vh] rounded border-2 border-orange-400" />
+    <img src={cer2} alt="Certificate 2" className="lg:w-[35%] w-screen lg:h-[80vh] rounded border-2 border-orange-400" />
+    <img src={cer3} alt="Certificate 3" className="lg:w-[35%] w-screen lg:h-[80vh]       border-2 border-orange-400    rounded" />
+  </div>
+</section>
+
+
     </div>
 
 
