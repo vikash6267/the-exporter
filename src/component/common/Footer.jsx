@@ -16,20 +16,26 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61553494371060"
                 className="text-gray-300 hover:text-white transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaFacebookF className="text-2xl" />
               </a>
               <a
-                href="#"
+                href="https://wa.me/917827992155"
                 className="text-gray-300 hover:text-white transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaWhatsapp className="text-2xl" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/thebharatexporter?igshid=MTQ1dXY5eDRoejducQ=="
                 className="text-gray-300 hover:text-white transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaInstagram className="text-2xl" />
               </a>
@@ -111,7 +117,7 @@ const Footer = () => {
           <p className="text-sm text-gray-400 mt-2">
             Powered By{" "}
             <a
-              href="https://mahi-technocrafts.vercel.app/"
+              href="https://mahitechnocrafts.in"
               className="hover:text-white transition duration-300"
               target="_blank"
               rel="noopener noreferrer"

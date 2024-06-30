@@ -14,6 +14,7 @@ import Dashboard from "./component/Admin/pages/Dashboard";
 import Blog from "./Pages/Blog";
 import SingleBlog from "./Pages/SingleBlog";
 import Category from "./Pages/Category";
+import Whatsapp from "./component/common/Whatsapp";
 
 function App() {
   return (
@@ -48,6 +49,19 @@ function App() {
           <Route path="/admin/getProduct" element={<GetProduct />} />
         </Route>
       </Routes>
+
+
+
+
+
+
+
+
+      
+      <div className="fixed bottom-8 md:right-10 right-4 z-50">
+    <Whatsapp/>
+
+      </div>
     </div>
   );
 }
