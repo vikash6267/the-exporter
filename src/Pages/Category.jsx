@@ -6,6 +6,10 @@ import ProductCard from "../component/common/ProductCard";
 import axios from "axios";
 
 function Category() {
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   const { cate } = useParams();
   const [display, setDisplay] = useState([]);
   const [product, setProduct] = useState([]);

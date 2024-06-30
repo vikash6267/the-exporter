@@ -75,10 +75,21 @@ const AddProduct = () => {
     }
   };
 
+  const categories = [
+    "DryFruits",
+    "Millet",
+    "Pulses",
+    "Spices",
+    "Vegetable",
+    "Powders",
+    "Rice",
+    "Fruits",
+  ];
+
   return (
     <>
       <h1 className="text-blue-600 text-center text-3xl border border-b-2 border-blue-600 pb-2">
-        Add Category
+        Add Products
       </h1>
       <form
         onSubmit={handleSubmit}
@@ -102,22 +113,28 @@ const AddProduct = () => {
           />
         </div>
         <div className="mb-4">
-          <label
-            className="block text-gray-700 text-xl font-bold mb-2"
-            htmlFor="category"
-          >
-            Category : <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-[50px] text-2xl"
-            name="category"
-            id="category"
-            value={formData.category}
-            onChange={handleChange}
-            required
-          />
-        </div>
+  <label
+    className="block text-gray-700 text-xl font-bold mb-2"
+    htmlFor="category"
+  >
+    Category : <span className="text-red-500">*</span>
+  </label>
+  <select
+    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-[50px] text-2xl"
+    name="category"
+    id="category"
+    value={formData.category}
+    onChange={handleChange}
+    required
+  >
+    <option value="" disabled>Select a category</option>
+    {categories.map((category) => (
+      <option key={category} value={category}>
+        {category}
+      </option>
+    ))}
+  </select>
+</div>
 
         <div className="mb-4">
           <label
