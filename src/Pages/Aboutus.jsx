@@ -64,13 +64,13 @@ const AboutUs = () => {
           <FaGavel className="text-red-500 mr-2" /> BUSINESS ETHICS
         </h2>
         <p>
-          VAD Industries' business ethics completely incorporate import-export laws & guidelines and operate in a fair, legal, and quality-assured manner. At VAD Industries, the groundwork of integrity is based on the standards of business conduct which are envisioned to meet commitment, principles, and endeavor to trade fairly and honestly.
+          The Bharat Exporter' business ethics completely incorporate import-export laws & guidelines and operate in a fair, legal, and quality-assured manner. At The Bharat Exporter, the groundwork of integrity is based on the standards of business conduct which are envisioned to meet commitment, principles, and endeavor to trade fairly and honestly.
         </p>
         <p>
           Our commitment to business reliability doesn’t compete with these factors—product quality, safety, and on-time delivery. In addition, it includes strong policies and an enthusiastic squad liable for answering certain import-export queries, updates on various deliverables, and suggestions on a constantly evolving landscape.
         </p>
         <p>
-          Being a part of business ethics, our principle certifies that VAD Industries conforms to all export, import, and trade compliance laws in all of its global business activities.
+          Being a part of business ethics, our principle certifies that The Bharat Exporter conforms to all export, import, and trade compliance laws in all of its global business activities.
         </p>
       </section>
 
