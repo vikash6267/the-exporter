@@ -38,9 +38,9 @@ function HeroSlider() {
         effect="fade"
         autoplay={{
           delay: 1000,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
         }}
-        loop={true}
+        // loop={true}
         className="absolute inset-0 w-full h-full"
       >
         {slider?.map((url, index) => (
