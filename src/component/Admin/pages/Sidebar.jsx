@@ -7,7 +7,16 @@ import { MdLogout } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken, setUser } from "../../../redux/authSlice";
-import { FcBullish, FcPlus, FcPieChart } from "react-icons/fc";
+import {
+  FcBullish,
+  FcPlus,
+  FcPieChart,
+  FcFilm,
+  FcFinePrint,
+  FcMultipleCameras,
+  FcMms,
+} from "react-icons/fc";
+
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(
     localStorage.getItem("sidebarCollapsed") === "true"
@@ -59,9 +68,7 @@ const Sidebar = () => {
           className={`${
             isCollapsed ? "hidden" : "block"
           } text-black font-bold text-xl`}
-        >
-       
-        </div>
+        ></div>
         {/* Toggle button */}
         <button
           onClick={handleToggle}
@@ -92,6 +99,26 @@ const Sidebar = () => {
                 to: "/admin/getProduct",
                 icon: <FcPieChart />,
                 label: "Get Product",
+              },
+              {
+                to: "/admin/addBlog",
+                icon: <FcMultipleCameras />,
+                label: "Add Blog",
+              },
+              {
+                to: "/admin/getBlog",
+                icon: <FcMms />,
+                label: "Get Blog",
+              },
+              {
+                to: "/admin/addSlider",
+                icon: <FcFilm />,
+                label: "Add Slider",
+              },
+              {
+                to: "/admin/getSlider",
+                icon: <FcFinePrint />,
+                label: "Get Slider",
               },
             ].map((item) => (
               <NavLink
@@ -134,6 +161,26 @@ const Sidebar = () => {
                 to: "/admin/getProduct",
                 icon: <FcPieChart />,
                 label: "Get Product",
+              },
+              {
+                to: "/admin/addBlog",
+                icon: <FcPlus />,
+                label: "Add Blog",
+              },
+              {
+                to: "/admin/getBlog",
+                icon: <FcPieChart />,
+                label: "Get Blog",
+              },
+              {
+                to: "/admin/addSlider",
+                icon: <FcFilm />,
+                label: "Add Slider",
+              },
+              {
+                to: "/admin/getSlider",
+                icon: <FcFinePrint />,
+                label: "Get Slider",
               },
             ].map((item) => (
               <NavLink

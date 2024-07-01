@@ -5,7 +5,15 @@ import { MdEmojiEvents, MdLogout } from "react-icons/md";
 import { useLocation } from "react-router-dom";
 import { setToken, setUser } from "../../../redux/authSlice";
 import { useDispatch } from "react-redux";
-import { FcBullish, FcPlus, FcPieChart } from "react-icons/fc";
+import {
+  FcBullish,
+  FcPlus,
+  FcPieChart,
+  FcMultipleCameras,
+  FcMms,
+  FcFinePrint,
+  FcFilm,
+} from "react-icons/fc";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -124,6 +132,48 @@ const Navbar = () => {
               className="text-xl mt-[3px]"
             >
               Get Product
+            </Link>
+          </li>
+          <li className="mb-2 flex gap-4 items-center">
+            <FcMultipleCameras size={22} />
+            <Link
+              to="/admin/addBlog"
+              onClick={closeSidebar}
+              className="text-xl mt-[3px]"
+            >
+              Add Blog
+            </Link>
+          </li>
+
+          <li className="mb-2 flex gap-4 items-center">
+            <FcMms size={22} />
+            <Link
+              to="/admin/getBlog"
+              onClick={closeSidebar}
+              className="text-xl mt-[3px]"
+            >
+              Get Blog
+            </Link>
+          </li>
+          <li className="mb-2 flex gap-4 items-center">
+            <FcFilm size={22} />
+            <Link
+              to="/admin/addSlider"
+              onClick={closeSidebar}
+              className="text-xl mt-[3px]"
+            >
+              Add Slider
+            </Link>
+          </li>
+
+          <li className="mb-2 flex gap-4 items-center">
+            <FcFinePrint size={22} />
+            <Link
+              to="/admin/getSlider"
+              onClick={closeSidebar}
+              className="text-xl mt-[3px]"
+            >
+              Get Slider
             </Link>
           </li>
 
