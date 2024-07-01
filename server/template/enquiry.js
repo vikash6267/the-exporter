@@ -70,7 +70,7 @@ const enquiryEmail = (name, companyName, product, quantity, email, contactNumber
     </head>
     <body>
         <div class="container">
-            <a href="https://the-bharat.vercel.app/">
+            <a href="https://thebharatexporter.com/">
                 <img class="logo" src="https://i.ibb.co/xjNCDxd/logo2.png" alt="The Bharat Exporter">
             </a>
             <div class="message">New Product Query</div>

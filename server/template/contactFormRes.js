@@ -85,8 +85,8 @@ const contactUsEmail = (
     
     <body>
         <div className="container">
-            <a href="http://localhost:5173"><img className="logo"
-                    src="https://i.ibb.co/N608STN/inext-ets-logo.jpg" alt="Not found"></a>
+            <a href="https://thebharatexporter.com/"><img className="logo"
+                    src="https://i.ibb.co/xjNCDxd/logo2.png" alt="Not found"></a>
             <div className="message">New Contact Query</div>
             <div className="body">
                 <p>Dear <span className="highlight">Admin</span>,</p>
