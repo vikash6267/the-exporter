@@ -58,8 +58,8 @@ const Sidebar = () => {
   return (
     <div
       ref={sidebarRef}
-      className={`fixed h-screen top-0   ${
-        isCollapsed ? "w-16" : "w-64"
+      className={`fixed h-screen top-0 overflow-y-scroll  ${
+        isCollapsed ? "w-20" : "w-64"
       } bg-white transition-all duration-300`}
     >
       <div className="flex items-center justify-between p-4">
@@ -207,7 +207,7 @@ const Sidebar = () => {
       </ul>
 
       {/* User and logout section */}
-      <div className="absolute bottom-2 left-2 right-2  overflow-hidden mt-10">
+      <div className="absolute -bottom-18 left-2 right-2  overflow-hidden mt-10">
         <div
           className={`flex items-center justify-center w-full ${
             isCollapsed
