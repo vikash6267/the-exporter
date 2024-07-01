@@ -37,7 +37,7 @@ function HeroSlider() {
         spaceBetween={30}
         effect="fade"
         autoplay={{
-          delay: 1000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         // loop={true}
