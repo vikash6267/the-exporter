@@ -15,9 +15,9 @@ const createContactCtrl = async (req, res) => {
         }
 
         const emailRes = await mailSender(
-            // "thebharatexporter@gmail.com",
-            "vikasmaheshwari6267@gmail.com",
-            "Your Data send successfully",
+            "thebharatexporter@gmail.com",
+            // "vikasmaheshwari6267@gmail.com",
+            "New contact form details",
             contactUsEmail(name, email, phone, subject, message)
         )
 
@@ -50,9 +50,9 @@ const createEnquiryCtrl = async (req, res) => {
         }
 
         const emailRes = await mailSender(
-            // "thebharatexporter@gmail.com",
-            "vikasmaheshwari6267@gmail.com",
-            "Your Data send successfully",
+            "thebharatexporter@gmail.com",
+            // "vikasmaheshwari6267@gmail.com",
+            "New Enquiry",
             enquiryEmail(name, companyName, product, quantity, email, contactNumber, country, state,city, address,phoneCode)
         )
         res.status(200).send({
