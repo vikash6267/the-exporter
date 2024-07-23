@@ -24,7 +24,7 @@ const Footer = () => {
                 <FaFacebookF className="text-2xl" />
               </a>
               <a
-                href="https://wa.me/917827992155"
+                href="https://wa.me/919792697340"
                 className="text-gray-300 hover:text-white transition duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -101,7 +101,7 @@ const Footer = () => {
                   The Bharat Exporter <br />
                   Vill. Dhadhani Ghazipur <br />
                   Uttar Pradesh 232336 <br />
-                  +91 7827992155
+                  +91 9792697340
                 </p>
               </div>
             </div>

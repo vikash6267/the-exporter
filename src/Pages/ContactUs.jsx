@@ -32,7 +32,7 @@ function ContactUs() {
             <h3 className=" text-[#33536B] lg:text-3xl font-sans text-xl">
               Call Us
             </h3>
-            <p className=" text-[#7c7c7c] lg:text-xl text-sm">+917827992155</p>
+            <p className=" text-[#7c7c7c] lg:text-xl text-sm">+919792697340</p>
           </div>
           <div className=" lg:w-[28%] w-[60%]">
             <h3 className=" text-[#33536B] lg:text-3xl font-sans text-xl">

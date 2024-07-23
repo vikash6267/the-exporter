@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactButton = ({ buttonColorClass }) => {
   const handleWhatsAppRedirect = () => {
-    const phoneNumber = '7827992155'; // Your phone number
+    const phoneNumber = '9792697340'; // Your phone number
     const message = 'Hello, I would like to inquire about your services.'; // Your pre-defined message
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
