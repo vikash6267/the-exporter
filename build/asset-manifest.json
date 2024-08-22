@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1f0f5d81.css",
+    "main.js": "/static/js/main.f304dacb.js",
+    "static/js/453.baba1c3d.chunk.js": "/static/js/453.baba1c3d.chunk.js",
+    "static/media/v.jpg": "/static/media/v.59d5d367df63da3a624a.jpg",
+    "static/media/contact.jpg": "/static/media/contact.8fbf0c743db6efddcb59.jpg",
+    "static/media/fruits.jpg": "/static/media/fruits.e2ded80fecf764d04a85.jpg",
+    "static/media/1.jpg": "/static/media/1.b1d4cc44d1dbaff37485.jpg",
+    "static/media/3.jpg": "/static/media/3.1c8e36440cfae908d06f.jpg",
+    "static/media/2.jpg": "/static/media/2.4749f76f834dbd4280e3.jpg",
+    "static/media/1.jpeg": "/static/media/1.3a1c511a06f90c3658aa.jpeg",
+    "static/media/black.png": "/static/media/black.175a9d2a6b9291d27e03.png",
+    "static/media/mung.png": "/static/media/mung.1956d34580fac8b720a2.png",
+    "static/media/corn.png": "/static/media/corn.90427d9c7363a25f0b28.png",
+    "static/media/peral.png": "/static/media/peral.57b45f1cf2f91fe45606.png",
+    "static/media/soyabean.png": "/static/media/soyabean.f92aa22905d44747edbf.png",
+    "static/media/kabuli.png": "/static/media/kabuli.9dc86ea8404c524f94ba.png",
+    "static/media/rice.png": "/static/media/rice.c120fbb419e323659c41.png",
+    "static/media/rk.png": "/static/media/rk.12078c6e2cbcbf7f3edf.png",
+    "static/media/rice.jpg": "/static/media/rice.10df8fd41e0b9d2f3189.jpg",
+    "static/media/about.jpg": "/static/media/about.b5ab7c6095b5eab19429.jpg",
+    "static/media/logo2.png": "/static/media/logo2.32f95625b133e1f2fa15.png",
+    "static/media/sumit.jpg": "/static/media/sumit.132aea0083b281e442c6.jpg",
+    "static/media/millet.jpg": "/static/media/millet.7af19bb59b7d0bae6bbe.jpg",
+    "static/media/pulses.jpg": "/static/media/pulses.9f43f0af2b327f5ecfb1.jpg",
+    "static/media/dry.jpg": "/static/media/dry.c9005ea9b316fd012998.jpg",
+    "static/media/vegetable.jpg": "/static/media/vegetable.4ae4feff2af1d6e93fa4.jpg",
+    "static/media/spice.jpg": "/static/media/spice.8a2d9f2388001be15621.jpg",
+    "static/media/kahdespice.jpg": "/static/media/kahdespice.0c1b61561c4a58af52ba.jpg",
+    "index.html": "/index.html",
+    "main.1f0f5d81.css.map": "/static/css/main.1f0f5d81.css.map",
+    "main.f304dacb.js.map": "/static/js/main.f304dacb.js.map",
+    "453.baba1c3d.chunk.js.map": "/static/js/453.baba1c3d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f0f5d81.css",
+    "static/js/main.f304dacb.js"
+  ]
+}
