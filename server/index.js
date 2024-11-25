@@ -34,7 +34,25 @@ app.use("/api/v1/auth", require("./routes/authRoute"))
 app.use("/api/v1/blog", require("./routes/blogRoute"))
 app.use("/api/v1/hero", require("./routes/heroRoute"))
 
+app.get('/proxy', async (req, res) => {
+    const url = req.query.url;
+  
+    if (!url) {
+      return res.status(400).json({ error: 'URL parameter is missing or invalid.' });
+    }
+  
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+  
+      res.json(data); // Forward the JSON response to the client
+    } catch (error) {
+      console.error('Error fetching data:', error.message);
+      res.status(500).json({ error: 'Error fetching data from the provided URL.' });
+    }
+  });
 
+  
 app.use("/", (req, res) => {
     res.send("Ha bhai chal rha hu. Uski tarha tere ko chod kar thodi jaunga 😀")
 })
